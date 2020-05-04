@@ -25,8 +25,8 @@
 
 ## Setup
 
-#### Create mongo database
-- Create a new MongoDB database named 'aas' in the localhost
+#### Start mongo
+- Start up mongodb database service on localhost
 
 #### Setup enrivonment variables
 - Create a folder 'config' at the project directory
