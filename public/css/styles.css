@@ -1,23 +1,15 @@
-body {              /* attributes for the whole site, except the anchor <a> */
-    color: #333333;
-    font-family: arial;
-    margin: 0 auto;         /* margin is spaced outside of the box. Top/Bottom Left/Right */
-    padding: 0 16px;        /* padding is spaced inside of the box. Top/Bottom Left/Right */
-    background: pink;
-}
-
-
-
-
-
-/* Applies to a only class element */ /* The class element is in a picture */
-.portrait {
-    width: 300px;
-}
-
 input {
     border: 1px solid #cccccc;
     padding: 8px;
+    margin: 10px;
+}
+
+textarea {
+    border: 1px solid #cccccc;
+    padding: 8px;
+    margin: 10px;
+    width: 500px;
+    height: 150px;
 }
 
 button {
@@ -26,20 +18,9 @@ button {
     background: #888888;
     color: white;
     padding: 8px;
+    
      
 }
-
-#text {
-    border: 1px solid black;
-    padding: 8px;
-}
-
-html, body { height: 100%; padding: 0; margin: 0; }
-    div { width: 50%; height: 50%; float: left; }
-    #div-get { background: #DDD; }
-    #div-post { background: #AAA; }
-    #div-patch { background: #777; }
-    #div4-delete { background: #444; }
 
 pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
 .string { color: green; }
