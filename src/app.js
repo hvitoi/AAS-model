@@ -1,8 +1,11 @@
 const express = require('express') // Express exposes just a single function
+const cors = require('cors')
 
 
 // Initialize application
 const app = express()
+
+app.use(cors())
 
 // Define static directory
 app.use(express.static('public'))

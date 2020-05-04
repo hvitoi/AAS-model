@@ -1,0 +1,26 @@
+{
+	"namePlate": "Vacuum generator",
+	"manufacturer": "Festo AG Co. KG",
+	"description": "Festo OVEL Vakuumsaugdüse",
+	"country": "Germany"
+	
+}
+{
+	"namePlate": "Nexo Wi-Fi Cordless Nutrunner",
+	"manufacturer": "Bosch Rexroth AG",
+	"description": "Nexo Wi-Fi Cordless Nutrunner",
+	"country": "Germany"
+	
+}
+{
+	"namePlate": "IIOT ready Logic and Motion Controller",
+	"manufacturer": "Schneider Electric",
+	"description": "IIOT ready Logic and Motion Controller",
+	"country": "Germany"
+}
+{
+	"namePlate": "S7_CPU1515",
+	"manufacturer": "Siemens",
+	"description": "S7_CPU1515",
+	"country": "Germany"
+}
