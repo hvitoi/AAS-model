@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>AAS Manager</title>
+        
+        <link rel="icon" href="/img/icon.png">
+        <link rel="stylesheet" href="/css/styles.css">
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <div class="main-content">
+            <!-- Input box -->
+            <form>
+                <textarea id="new-aas" rows="4" cols="50">
+{
+"namePlate": "S7_CPU1515",
+"manufacturer": "Siemens",
+"description": "S7_CPU1515"
+}
+                </textarea>
+                <button>OK</button>
+            </form>
+
+            <!-- Results box -->
+            <pre id="aas-box"></pre>
+        </div>
+    </body>
+
+</html>
+
+<script type="module" src="js/registerAas.js"></script>
