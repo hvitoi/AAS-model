@@ -1,12 +1,5 @@
 const express = require('express') // Express exposes just a single function
 const cors = require('cors')
-const path = require('path')
-
-// Setup absolute path for index.html
-const indexFile= path.join(__dirname, '../public/index.html')
-
-
-
 
 // Initialize application
 const app = express()
@@ -22,11 +15,6 @@ app.use(express.json())
 
 // Setup routers
 app.use(require('./routers/asset-endpoint'))
-
-// Route for not matched URLs
-app.get('*', (req, res) => {
-    res.sendFile(indexFile)          
-})
 
 
 module.exports = app
