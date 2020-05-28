@@ -5,7 +5,7 @@ import { syntaxHighlight } from './syntaxHighlight.js'
 const updateAas = async (uuid, aas, cb) => {
 
     // Setup fetch options
-    const url = '/aas/' + uuid
+    const url = '/api/aas/' + uuid
     const options = {
         method: 'PATCH', 
         headers: {'Content-Type': 'application/json'},

@@ -3,7 +3,7 @@ import { syntaxHighlight } from './syntaxHighlight.js'
 const registerAas = async (aas, cb) => {
 
     // Setup fetch options
-    const url = '/aas'
+    const url = '/api/aas'
     const options = {
         method: 'POST', 
         headers: {'Content-Type': 'application/json'},

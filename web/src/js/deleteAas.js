@@ -1,12 +1,14 @@
 import { syntaxHighlight } from './syntaxHighlight.js'
 
-const fetchAas = async (uuid, cb) => {
+const textBox = document.querySelector('#aas-box')
+const aasForm = document.querySelector('form')
 
-    // Check if the UUID was provided
-    var url = uuid === undefined ? `/aas` : `/aas/${uuid}`
-    
+const deleteAas = async (uuid, cb) => {
+
     // Setup fetch options
-    const options = {method: 'GET'}
+    const url = '/api/aas/' + uuid
+    const options = {method: 'DELETE'}
+    
 
     try {
         // Fetch response
@@ -29,41 +31,26 @@ const fetchAas = async (uuid, cb) => {
     } catch (err) {
         cb()
     }
+    
 }
-
-
-
-
-
-const textBox = document.querySelector('#aas-box')
-const aasForm = document.querySelector('form')
-
-// Run on load
-fetchAas('', (data) => {
-    textBox.innerHTML = '<b>Listing out all AASs:</b>\n' + syntaxHighlight(data)
-})
 
 
 // Run on button click
 aasForm.addEventListener('submit', (e) => {
-
+        
     // Prevent reloading
     e.preventDefault()
 
     // Get input value
     const inputBox = document.querySelector('input').value
 
-    // Fetch results
-    fetchAas(inputBox, (data) => {
+    // Delete AAS
+    deleteAas(inputBox, (data) => {
         if (data) {
-            textBox.innerHTML = '<b>Search results:</b>\n' + syntaxHighlight(data)
+            textBox.innerHTML = '<b>The following AAS was sucessfully removed:</b>\n' + syntaxHighlight(data)
         } else {
-            textBox.innerHTML = '<b>No AAS found for the provided UUID.</b>'
+            textBox.innerHTML = '<b>No AAS removed.</b>'
         }
-        
     })
-
+    
 })
-
-
-export { fetchAas }

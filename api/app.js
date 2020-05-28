@@ -8,13 +8,13 @@ const app = express()
 app.use(cors())
 
 // Define static directory
-app.use(express.static('public'))
+//app.use(express.static('public'))
 
 // Automatically parse incoming json
 app.use(express.json())
 
-// Setup routers
-app.use(require('./routers/asset-endpoint'))
+// Use routes
+app.use(require('./routes/asset-endpoint'))
 
 
 module.exports = app

@@ -11,17 +11,14 @@ const Asset = require('../db/models/asset')
 // Middlewares
 const { uploadPicture, uploadPdf } = require('../db/middlewares/upload')   
 
-
-
-
-
 // -------------------------
+
 // Create route
 const router = new express.Router()
 
 
 
-// Register asset
+// Register AAS
 router.post('/aas', async (req, res) => {
     try {
         // Create new instance of "Asset" model
@@ -38,7 +35,7 @@ router.post('/aas', async (req, res) => {
     }
 })
 
-// List assets
+// List AAS's
 router.get('/aas', async (req, res) => {
     try{
         const assetList = await Asset.find({})
@@ -48,7 +45,7 @@ router.get('/aas', async (req, res) => {
     }
 })
 
-// Find asset by ID
+// Find AAS by ID
 router.get('/aas/:id', async (req, res) => {
     try {
         // Find asset
@@ -67,7 +64,7 @@ router.get('/aas/:id', async (req, res) => {
     }
 })
 
-// Update asset by ID
+// Update AAS by ID
 router.patch('/aas/:id', async (req, res) => {
     const updateKeys = Object.keys(req.body)
     const allowedKeys= ['namePlate', 'manufacturer', 'description', 'country', 'isAvailable']
@@ -93,7 +90,7 @@ router.patch('/aas/:id', async (req, res) => {
     }
 })
 
-// Delete asset by ID
+// Delete AAS by ID
 router.delete('/aas/:id', async (req, res) => {
     try {
         // Find asset

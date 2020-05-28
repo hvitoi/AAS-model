@@ -1,0 +1,54 @@
+version: '3.8'
+services:
+
+  nginx:
+    image: hvitoi/aas-nginx
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    restart: always
+    depends_on:
+      - api
+      - web
+    ports:
+      - '8080:80'
+    
+
+  web:
+    image: hvitoi/aas-web
+    build:
+      dockerfile: Dockerfile
+      context: ./web
+    restart: always
+    depends_on:
+      - api
+    volumes:
+      - /app/node_modules
+      - ./web:/app
+    stdin_open: true
+ 
+  api:
+    image: hvitoi/aas-api
+    build:
+      dockerfile: Dockerfile
+      context: ./api
+    restart: always
+    depends_on:
+      - mongo
+    volumes:
+      - /app/node_modules
+      - ./api:/app
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/aas
+  
+  mongo:
+    image: hvitoi/aas-mongo
+    build:
+      dockerfile: Dockerfile
+      context: ./mongo
+    restart: always
+    volumes:
+      - db-data:/data/db
+
+volumes:
+  db-data:
