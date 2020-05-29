@@ -62,22 +62,29 @@ const AasSearch = () => {
                 </tr>
             ))
         }
-        return <tr><td>No AAS to show.</td></tr>
+        return <tr><td colSpan="3">No AAS to show.</td></tr>
     }
 
     
     return (
         <div className="container">
 
-            <form className="form-inline" onSubmit={ handleSubmit }>
-                
-                <div className="form-group">
-                    <label className="sr-only" htmlFor="aasId">UUID</label>
-                    <input className="form-control" id="aasId" type="text" placeholder="UUID" value={term} onChange={ e => setTerm(e.target.value) } />
-                </div>
-                <button className="btn btn-primary" type="submit">Search</button>
-                
-            </form>
+            <nav className="navbar navbar-light bg-light">
+      
+                <form className="form-inline" onSubmit={ handleSubmit }>
+                    <div className="form-group">
+                        <label className="sr-only" htmlFor="aasId">UUID</label>
+                        <input className="form-control" id="aasId" type="text" placeholder="UUID" value={term} onChange={ e => setTerm(e.target.value) } />
+                    </div>
+                    <button className="btn btn-primary" type="submit">Search</button>
+                </form>
+
+                <Link className="btn btn-warning float-right" to="/aas/new" >Create AAS</Link>
+
+            </nav>
+
+ 
+
 
             <div className="table-responsive-sm">
                 <table className="table table-striped table-sm table-hover">
@@ -96,7 +103,7 @@ const AasSearch = () => {
                 </table>
             </div>
             
-            <Link className="btn btn-link" to={'/'}>Home</Link>
+            <Link className="btn btn-outline-primary" to={'/'}>Home</Link>
 
         </div>
     )
