@@ -21,7 +21,7 @@ const AasNew = () => {
       });
 
     useEffect(() => {
-        addField()
+        append({ name: "extras" })
     }, [append]);
 
     const onSubmit = async (data) => {
@@ -49,7 +49,7 @@ const AasNew = () => {
     }
 
     const renderButtons = ( index) => {
-            if(fields.length === index+1) return <button type="button" style={{ width: '40px' }} className="btn btn-info"onClick={ addField }><strong>+</strong></button>;
+            if(fields.length === index+1) return <button type="button" style={{ width: '40px' }} className="btn btn-info" onClick={ addField }><strong>+</strong></button>;
             return <button type="button" className="btn btn-danger" style={{ width: '40px' }} onClick={ () => remove(index) }><strong>-</strong></button>
     }
 
