@@ -1,7 +1,7 @@
 # Asset Administration Shell
 
-- Access: localhost:8080
-- API endpoint: localhost:8080/api/aas
+- **Access**: localhost:8080
+- **API endpoint**: localhost:8080/api/aas
 
 
 
@@ -14,27 +14,24 @@
 - https://docs.docker.com/compose/
 
 
-
 ## Setup
 
-#### Start mongo
-- Start up mongodb database service on localhost
-
-#### Setup enrivonment variables
-- Create a folder 'config' at the project directory
-- create a 'dev.env' file in the 'config' directory with the environment variables:
-
-```jsx
-PORT=3000
-MONGODB_URL=mongodb://127.0.0.1:27017/aas
+#### Clone or download the repository
+```bash
+git clone https://github.com/hvitoi/AAS-model.git
 ```
-
-
 
 ## Run
 
-#### Start project (development mode) on the Terminal at the project directory
-- npm run dev
+#### Run docker-compose from the root repo directory
+```bash
+docker-compose up
+```
 
-#### Access system on browser.
-- localhost:3000
+## Access
+
+#### Access system on browser
+```
+http://localhost:8080
+```
+
