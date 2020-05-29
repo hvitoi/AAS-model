@@ -1,25 +1,17 @@
 # Asset Administration Shell
 
-- Available at: https://aas-model.herokuapp.com/
-- API endpoint: https://aas-model.herokuapp.com/aas
+- Access: localhost:8080
+- API endpoint: localhost:8080/api/aas
 
 
 
 ## Installation guide
 
-#### Install Noje.js
-- https://nodejs.org/en/
+#### Install Docker Engine
+- https://docs.docker.com/engine/
 
-#### Install MongoDB
-- https://www.mongodb.com/
-
-#### Install Git
-- https://git-scm.com/
-
-#### Clone the repository
-- git clone https://github.com/hvitoi/AAS-model.git
-
-
+#### Install Docker Compose
+- https://docs.docker.com/compose/
 
 
 
