@@ -1,0 +1,13 @@
+### List AASs
+GET http://localhost:5000/aas HTTP/1.1
+
+### Token - KAFKA-PRODUCER
+POST http://localhost/api/aas HTTP/1.1
+Content-Type: application/json
+
+{
+	"namePlate": "Festo OVEL Vacuum generator",
+	"manufacturer": "Festo AG & Co. KG",
+	"description": "OVEL Vakuumsaugdüse",
+	"country": "Germany"
+}

@@ -1,15 +1,15 @@
 // Packages
-import React, { useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect } from "react";
+import axios from "axios";
 
 // Hooks
-import { useForm, useFieldArray } from 'react-hook-form';
+import { useForm, useFieldArray } from "react-hook-form";
 
 // Components
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 // History
-import history from '../history';
+import history from "../history";
 
 // -------------------------
 
@@ -18,11 +18,11 @@ const AasNew = () => {
 
   const { fields, append, remove } = useFieldArray({
     control,
-    name: 'extras'
+    name: "extras",
   });
 
   useEffect(() => {
-    append({ name: 'extras' });
+    append({ name: "extras" });
   }, [append]);
 
   const onSubmit = async (data) => {
@@ -31,25 +31,25 @@ const AasNew = () => {
       ...(data.extras || []).reduce(
         (result, extra) => ({
           ...result,
-          [extra.key]: extra.value
+          [extra.key]: extra.value,
         }),
         {}
-      )
+      ),
     };
     delete newData.extras;
     console.log(newData);
 
     // Creates AAS
     try {
-      const res = await axios.post('/api/aas', newData);
-      history.push('/aas/' + res.data._id);
+      const res = await axios.post("/api/aas", newData);
+      history.push("/aas/" + res.data._id);
     } catch (error) {
       console.log(error);
     }
   };
 
   const addField = () => {
-    append({ name: 'extras' });
+    append({ name: "extras" });
   };
 
   const renderButtons = (index) => {
@@ -57,7 +57,7 @@ const AasNew = () => {
       return (
         <button
           type="button"
-          style={{ width: '40px' }}
+          style={{ width: "40px" }}
           className="btn btn-info"
           onClick={addField}
         >
@@ -68,7 +68,7 @@ const AasNew = () => {
       <button
         type="button"
         className="btn btn-danger"
-        style={{ width: '40px' }}
+        style={{ width: "40px" }}
         onClick={() => remove(index)}
       >
         <strong>-</strong>
@@ -79,7 +79,7 @@ const AasNew = () => {
   const renderInputs = () =>
     fields.map((item, index) => {
       return (
-        <div className="input-group" key={item.id} style={{ margin: '5px' }}>
+        <div className="input-group" key={item.id} style={{ margin: "5px" }}>
           <div className="input-group-prepend">
             {/* <input className="input-group-text" placeholder="key" name={input+'key'} /> */}
             <input
@@ -110,7 +110,7 @@ const AasNew = () => {
       <br />
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="input-group" style={{ margin: '5px' }}>
+        <div className="input-group" style={{ margin: "5px" }}>
           <div className="input-group-prepend">
             <input
               type="text"
@@ -128,7 +128,7 @@ const AasNew = () => {
           />
         </div>
 
-        <div className="input-group" style={{ margin: '5px' }}>
+        <div className="input-group" style={{ margin: "5px" }}>
           <div className="input-group-prepend">
             <input
               type="text"
@@ -145,7 +145,7 @@ const AasNew = () => {
           />
         </div>
 
-        <div className="input-group" style={{ margin: '5px' }}>
+        <div className="input-group" style={{ margin: "5px" }}>
           <div className="input-group-prepend">
             <input
               type="text"
@@ -171,7 +171,7 @@ const AasNew = () => {
           Create AAS
         </button>
       </form>
-      <Link className="btn btn-outline-primary" to={'/aas'}>
+      <Link className="btn btn-outline-primary" to={"/aas"}>
         AAS List
       </Link>
     </div>

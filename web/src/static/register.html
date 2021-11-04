@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>AAS Manager</title>
 
-    <head>
-        <title>AAS Manager</title>
-        
-        <link rel="icon" href="/img/icon.png">
-        <link rel="stylesheet" href="/css/styles.css">
-        
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+    <link rel="icon" href="/img/icon.png" />
+    <link rel="stylesheet" href="/css/styles.css" />
 
-    <body>
-        <div class="main-content">
-            <!-- Input box -->
-            <form>
-                <textarea id="new-aas" placeholder="Insert the new AAS in JSON format.&#10;For example:&#10;{&#10;   'namePlate': 'Machine',&#10;   'manufacturer': 'Company',&#10;   'description': 'Machine model abc12'&#10;}"></textarea>
-                <button>Register</button>
-            </form>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-            <!-- Results box -->
-            <pre id="aas-box"></pre>
-        </div>
-    </body>
+  <body>
+    <div class="main-content">
+      <!-- Input box -->
+      <form>
+        <textarea
+          id="new-aas"
+          placeholder="Insert the new AAS in JSON format.&#10;For example:&#10;{&#10;   'namePlate': 'Machine',&#10;   'manufacturer': 'Company',&#10;   'description': 'Machine model abc12'&#10;}"
+        ></textarea>
+        <button>Register</button>
+      </form>
 
+      <!-- Results box -->
+      <pre id="aas-box"></pre>
+    </div>
+  </body>
 </html>
 
 <script type="module" src="js/registerAas.js"></script>
